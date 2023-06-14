@@ -1,13 +1,19 @@
 const route = require('express').Router()
+const authorize = require('../middleware/authorize')
 const { encrypt, decrypt } = require('../utils/encrypt')
 
 // array to store snippets instead of a database
 const snippets = []
 
 /**
+ * Note that the endpoints in this file are now using the authorize middleware
+ * In order to access them, a valid jwt must be provided!
+ */
+
+/**
  * Create a snippet
  */
-route.post('/', (req, res) => {
+route.post('/', authorize, (req, res) => {
   const { language, code } = req.body
 
   // basic validation
@@ -33,7 +39,7 @@ route.post('/', (req, res) => {
 /**
  * Get all snippets
  */
-route.get('/', (req, res) => {
+route.get('/', authorize, (req, res) => {
   const { lang } = req.query
 
   // decrypt all snippets
@@ -56,7 +62,7 @@ route.get('/', (req, res) => {
 /**
  * Get one snippet
  */
-route.get('/:id', (req, res) => {
+route.get('/:id', authorize, (req, res) => {
   const snippetId = parseInt(req.params.id)
   const snippet = snippets.find(snippet => snippet.id === snippetId)
 
