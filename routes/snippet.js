@@ -1,6 +1,6 @@
 const route = require('express').Router()
-const authorize = require('../middleware/authorize')
 const { encrypt, decrypt } = require('../utils/encrypt')
+const { requiresAuth } = require('express-openid-connect')
 
 // array to store snippets instead of a database
 const snippets = []
@@ -13,7 +13,7 @@ const snippets = []
 /**
  * Create a snippet
  */
-route.post('/', authorize, (req, res) => {
+route.post('/', requiresAuth(), (req, res) => {
   const { language, code } = req.body
 
   // basic validation
@@ -39,7 +39,7 @@ route.post('/', authorize, (req, res) => {
 /**
  * Get all snippets
  */
-route.get('/', authorize, (req, res) => {
+route.get('/', requiresAuth(), (req, res) => {
   const { lang } = req.query
 
   // decrypt all snippets
@@ -62,7 +62,7 @@ route.get('/', authorize, (req, res) => {
 /**
  * Get one snippet
  */
-route.get('/:id', authorize, (req, res) => {
+route.get('/:id', requiresAuth(), (req, res) => {
   const snippetId = parseInt(req.params.id)
   const snippet = snippets.find(snippet => snippet.id === snippetId)
 
