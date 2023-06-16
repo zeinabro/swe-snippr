@@ -1,11 +1,13 @@
 # Sinppr API
 
-## Adding Security
-
 This branch deals with two security measures:
 
 - encrypting the snippets
 - creating user accounts
+
+We have also refactored into separate routes for readability.
+
+## Coach notes
 
 The big concepts at play are
 
@@ -125,3 +127,18 @@ curl -v -XGET \
 -H 'Authorization: Basic dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyNA==' \
 'http://localhost:5000/user' | json_pp
 ```
+
+## Next steps
+
+The apprentices are challenged to implement encryption and basic auth for
+themselves. They will likely want to rely on libraries as much as possible: many
+frameworks have canonical ways of doing these things which abstract much of the
+complexity away. Encourage apprentices to go with the flow of what their
+framework recommends. Express.js is very unopinionated so a lot of this feels
+very manual, but there are libraries like `passport` which provide abstractions
+and are well documented.
+
+Apprentices shouldn't try to memorise what they've seen in the demo, but rather
+use the documentation for their framework to implement the spec. Their
+particular implementation might look very different and that is fine (encouraged
+even!)
