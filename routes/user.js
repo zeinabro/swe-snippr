@@ -35,7 +35,7 @@ route.post('/', basicAuth, async (req, res) => {
 /**
  * Sign in a user
  */
-route.post('/signin', basicAuth, async (req, res) => {
+route.post('/login', basicAuth, async (req, res) => {
   // get the user from the database
   const user = users.find(user => user.email === req.user.email)
 
