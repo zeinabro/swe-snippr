@@ -9,7 +9,7 @@ const users = []
  * Create a user (sign up)
  */
 route.post('/', basicAuth, async (req, res) => {
-  // get the user data
+  // get the user data, thanks to basicAuth middleware!
   const { email, password } = req.user
   const id = users.length + 1
 
