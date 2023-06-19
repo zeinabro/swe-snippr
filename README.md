@@ -2,7 +2,12 @@
 
 Welcome to Snippr! The feature branches in this repo represent the evolution of
 a sample app. Each week we can demo a new branch, look at what has changed and
-why.
+why:
+
+1. `snippets-api`
+2. `security`
+3. `tokens`
+4. `auth0`
 
 This branch implements a very basic API which allows users to `POST` and `GET`
 code snippets.
