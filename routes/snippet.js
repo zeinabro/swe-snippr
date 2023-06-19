@@ -2,8 +2,8 @@ const route = require('express').Router()
 const authorize = require('../middleware/authorize')
 const { encrypt, decrypt } = require('../utils/encrypt')
 
-// array to store snippets instead of a database
-const snippets = []
+// array to store snippets
+const snippets = require('./seedData.json')
 
 /**
  * Note that the endpoints in this file are now using the authorize middleware
