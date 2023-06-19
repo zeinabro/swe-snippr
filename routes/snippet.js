@@ -5,6 +5,9 @@ const { requiresAuth } = require('express-openid-connect')
 // array to store snippets
 const snippets = require('./seedData.json')
 
+// generate a unique ID for each snippet
+let id = snippets.length + 1
+
 /**
  * Note that the endpoints in this file are now using the authorize middleware
  * In order to access them, a valid jwt must be provided!
@@ -24,7 +27,7 @@ route.post('/', requiresAuth(), (req, res) => {
   }
 
   const snippet = {
-    id: snippets.length + 1,
+    id: id++,
     language,
     code
   }
