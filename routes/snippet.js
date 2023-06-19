@@ -2,8 +2,8 @@ const route = require('express').Router()
 const { encrypt, decrypt } = require('../utils/encrypt')
 const { requiresAuth } = require('express-openid-connect')
 
-// array to store snippets instead of a database
-const snippets = []
+// array to store snippets
+const snippets = require('./seedData.json')
 
 /**
  * Note that the endpoints in this file are now using the authorize middleware
