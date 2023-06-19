@@ -1,5 +1,9 @@
 # Snippr API
 
+Welcome to Snippr! The feature branches in this repo represent the evolution of
+a sample app. Each week we can demo a new branch, look at what has changed and
+why.
+
 This branch implements a very basic API which allows users to `POST` and `GET`
 code snippets.
 
@@ -47,7 +51,8 @@ require handling? Anything more we could do to improve validation?
 
 ### Make some requests
 
-If you `npm i && npm run dev` you should be able to hit the API `localhost:5000`
+If you `npm i && npm run dev` you should be able to hit the API at
+`localhost:5000`
 
 Try getting a single snippet with
 
