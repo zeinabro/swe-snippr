@@ -4,6 +4,9 @@ const { encrypt, decrypt } = require('../utils/encrypt')
 // array to store snippets
 const snippets = require('./seedData.json')
 
+// generate a unique ID for each snippet
+let id = snippets.length + 1
+
 /**
  * Create a snippet
  */
@@ -18,7 +21,7 @@ route.post('/', (req, res) => {
   }
 
   const snippet = {
-    id: snippets.length + 1,
+    id: id++,
     language,
     code
   }
