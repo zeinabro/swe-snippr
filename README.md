@@ -7,6 +7,10 @@ with Google, and benefit from all the goodness Auth0 provides: user management
 database, account merging, premade middleware and UI, no-hassle security updates
 and a team of security experts monitoring the landscape at all times.
 
+The past two sessions have been quite heavy - lots of manually handling tokens
+etc. This session should feel like a bit of a relief because Auth0 handles a lot
+of the difficulty for us.
+
 ## Coach notes
 
 In `app.js`, you will notice a new `config` object: this is for Auth0.
@@ -44,14 +48,19 @@ have been implemented:
 - the `requiresAuth()` middleware on endpoints in various routes
 - the `req.oidc.user` object in the `/user` router
 
-### Protected endpoints
+### Config
 
-Run the app with `npm run dev` and try visiting `/snippet`. What happens? How is
-this related to the fact that
+Notice that we still need a secret to give to the Auth0 config. Why is this?
+What is it for?
 
 What is the client id?
 
 What is the difference between the base url and the issuer base url?
+
+### Protected endpoints
+
+Run the app with `npm run dev` and try visiting `/snippet`. What happens? How is
+this related to the fact that
 
 ```js
 app.use(auth(config))
@@ -64,11 +73,6 @@ app.use('/snippet', routes.snippet)
 ```
 
 in `app.js`?
-
-### Config
-
-Notice that we still need a secret to give to the Auth0 config. Why is this?
-What is it for?
 
 ### Create an account
 
