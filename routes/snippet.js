@@ -1,8 +1,8 @@
 const route = require('express').Router()
 const { encrypt, decrypt } = require('../utils/encrypt')
 
-// array to store snippets instead of a database
-const snippets = []
+// array to store snippets
+const snippets = require('./seedData.json')
 
 /**
  * Create a snippet
