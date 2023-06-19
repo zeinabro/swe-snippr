@@ -50,14 +50,14 @@ curl -v -XPOST \
 'http://localhost:5000/user/login' | json_pp
 ```
 
-logs them in. The latter command should provide you with an accessToken in the
+signs them in. The latter command should provide you with an accessToken in the
 response. Something like:
 
 ```bash
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QHVzZXIuY29tIiwiaWF0IjoxNjg2OTMxNTIzfQ.R7ZCtD6ieMkIriDQYN0s_DPHC1lMyM5CIGRp1UFbblo
 ```
 
-If you were to sign in again, you would get a different token every time.
+If you were to sign in again, you would get a different token each time.
 
 ### Access a resource
 
@@ -100,6 +100,7 @@ As mentioned, the frameworks the apprentices are using might implement
 token-based authentication in very different ways, and they might not need to do
 much to handle the verification of tokens and handling of secrets. The
 underlying protocol should be roughly the same, however, so encourage them to
-lean into their frameworks documentation and not be too worried if the
-implementation of auth looks quite different. Focus on the requirements in the
-spec.
+lean into their framework's documentation and not be too worried if the
+implementation of auth looks quite different.
+
+Focus on the requirements in the spec.
