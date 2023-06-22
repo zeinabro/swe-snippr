@@ -103,7 +103,6 @@ the API?
 
 ## Next steps
 
-Apprentices are now equipped with the key principles for API development. Within
-the content, they have the specification for Snippr, and also some guidance on
-which framework aligns with their language. It is their turn to head off and try
-to implement the spec.
+Apprentices will be given the specification for Snippr, and also some guidance
+on which framework aligns with their language. It is their turn to head off and
+try to implement the spec for themselves.
