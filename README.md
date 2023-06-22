@@ -1,4 +1,4 @@
-# Sinppr API
+# Snippr API
 
 This branch removes some of the work we did last time: we no longer have `/user`
 endpoints for signing up, logging in, or logging out. These are now provided by
