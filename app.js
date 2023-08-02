@@ -4,7 +4,7 @@ const routes = require('./routes')
 const { auth } = require('express-openid-connect')
 
 const app = express()
-const PORT = 5000
+const PORT = 4000
 
 const config = {
   authRequired: false,
