@@ -2,7 +2,7 @@ require('dotenv').config() // bring in environment variables
 const express = require('express')
 const app = express()
 const routes = require('./routes')
-const PORT = 5000
+const PORT = 4000
 
 app.use(express.json())
 
