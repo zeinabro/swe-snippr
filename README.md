@@ -39,7 +39,7 @@ In this new token based world, we create a user and then sign them in.
 ```bash
 curl -v -XPOST \
 -H 'Authorization: Basic dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyMw==' \
-'http://localhost:5000/user' | json_pp
+'http://localhost:4000/user' | json_pp
 ```
 
 creates the user, and
@@ -47,7 +47,7 @@ creates the user, and
 ```bash
 curl -v -XPOST \
 -H 'Authorization: Basic dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyMw==' \
-'http://localhost:5000/user/login' | json_pp
+'http://localhost:4000/user/login' | json_pp
 ```
 
 signs them in. The latter command should provide you with an accessToken in the
@@ -65,7 +65,7 @@ All of the `'/snippet'` endpoints have been protected. In order to access them,
 you don't need to send your password again, but instead you send your token!
 
 ```bash
-curl -v -XGET 'http://localhost:5000/snippet?lang=python' | json_pp
+curl -v -XGET 'http://localhost:4000/snippet?lang=python' | json_pp
 ```
 
 will fail, but
@@ -73,7 +73,7 @@ will fail, but
 ```bash
 curl -v -XGET \
 -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QHVzZXIuY29tIiwiaWF0IjoxNjg2OTMxNTIzfQ.R7ZCtD6ieMkIriDQYN0s_DPHC1lMyM5CIGRp1UFbblo' \
-'http://localhost:5000/snippet?lang=python' | json_pp
+'http://localhost:4000/snippet?lang=python' | json_pp
 ```
 
 should succeed.
