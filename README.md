@@ -70,7 +70,7 @@ which actually gets stored, then try:
 curl -v -XPOST \
 -H "Content-type: application/json" \
 -d '{ "code" : "print(2 + 2)", "language" : "Python" }' \
-'http://localhost:5000/snippet' | json_pp
+'http://localhost:4000/snippet' | json_pp
 ```
 
 Notice that the data is encrypted in the data store, but decrypted before being
@@ -83,7 +83,7 @@ To create a user, hit
 ```bash
 curl -v -XPOST \
 -H 'Authorization: Basic dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyMw==' \
-'http://localhost:5000/user' | json_pp
+'http://localhost:4000/user' | json_pp
 ```
 
 Note that `dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyMw==` is the Base 64 encoding of the
@@ -110,14 +110,14 @@ Try accessing it with the header (you need to `POST` this user first!)
 ```bash
 curl -v -XGET \
 -H 'Authorization: Basic dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyMw==' \
-'http://localhost:5000/user' | json_pp
+'http://localhost:4000/user' | json_pp
 ```
 
 without the header
 
 ```bash
 curl -v -XGET \
-'http://localhost:5000/user' | json_pp
+'http://localhost:4000/user' | json_pp
 ```
 
 or with the wrong password
@@ -125,7 +125,7 @@ or with the wrong password
 ```bash
 curl -v -XGET \
 -H 'Authorization: Basic dGVzdEB1c2VyLmNvbTpwYXNzd29yZDEyNA==' \
-'http://localhost:5000/user' | json_pp
+'http://localhost:4000/user' | json_pp
 ```
 
 ## Next steps
