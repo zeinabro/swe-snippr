@@ -8,7 +8,7 @@ app.use(express.json())
 const snippets = require('./seedData.json')
 
 // generate a unique ID for each snippet
-let id = snippets.length
+let id = snippets.length + 1
 
 // create a new snippet
 app.post('/snippet', (req, res) => {
