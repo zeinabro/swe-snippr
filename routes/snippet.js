@@ -66,14 +66,14 @@ route.get('/', (req, res) => {
  */
 route.get('/:id', (req, res) => {
   const snippetId = parseInt(req.params.id)
-  const snippet = snippets.find(snippet => snippet.id === snippetId)
+  let snippet = snippets.find(snippet => snippet.id === snippetId)
 
   if (!snippet) {
     return res.status(404).json({ error: 'Snippet not found' })
   }
 
   // decrypt before sending back
-  snippet.code = decrypt(snippet.code)
+  snippet = {...snippet, 'code': decrypt(snippet.code)}
   res.json(snippet)
 })
 
