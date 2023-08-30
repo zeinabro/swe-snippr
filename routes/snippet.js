@@ -2,7 +2,12 @@ const route = require('express').Router()
 const { encrypt, decrypt } = require('../utils/encrypt')
 
 // array to store snippets
-const snippets = require('./seedData.json')
+const snippets = require('../seedData.json')
+
+//encrypt each code snippet in initial array
+snippets.map((snippet, index) => {
+  snippets[index] = {...snippet, code: encrypt(snippet.code)}
+})
 
 // generate a unique ID for each snippet
 let id = snippets.length + 1
