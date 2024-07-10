@@ -4,6 +4,8 @@ const PORT = 4000
 
 app.use(express.json())
 
+app.use("/user", require("./routes/user.js"))
+
 // array to store snippets
 const snippets = require('./seedData.json')
 
