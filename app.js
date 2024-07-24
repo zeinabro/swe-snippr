@@ -8,9 +8,11 @@ const PORT = 4000
 
 const config = {
   authRequired: false,
+  // creates /logout endpoint to give ability to logout
   auth0Logout: true,
   secret: process.env['TOKEN_SECRET'],
-  baseURL: 'http://localhost:5000',
+  // base url and client id should not be hard coded
+  baseURL: 'http://localhost:4000',
   clientID: 'pBrHu7U6eYvmrOMpbagfzUyH1iDEvcxR',
   issuerBaseURL: 'https://dev-nxyejtxm.us.auth0.com'
 }
